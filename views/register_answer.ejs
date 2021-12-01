@@ -1,0 +1,31 @@
+<!doctype html>
+ <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <!-- Required styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <title>My blog</title>
+  </head>
+ <body>
+  <div class="container social__logo">
+    <img src="../public/assets/VK_Logo.png" alt="Logo">
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <%- include("partials/navbar.ejs") %>
+    </div>
+    <div class="right-side">
+      <span class="alert alert-success p-2 rounded opacity-70 d-flex align-items-center w-130 ">Your account is created, <%- formData.first_Name %></span>
+      <span class="login__sugessed"><a href="/login">Now you can login</a></span>
+    </div>
+  </div>
+
+ <!-- JavaScript -->
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/bootstrap/js/bootstrap.min.js"></script>
+ </body>
+</html>

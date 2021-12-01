@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/users.css">
+</head>
+<body>
+  <div class="container social__logo">
+    <img src="../public/assets/VK_Logo.png" alt="Logo">
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <%- include("partials/navbar.ejs") %>
+    </div>
+    <div class="right-side">
+      <div class="search__input">
+        <form action="" name="findUserForm">
+          <input type="text" id="searchInput" value="<%- searchValue %>" >
+          <button type="submit" class="search__btn">Search user</button>
+        </form>
+      </div>
+      <div class="users__block">
+        <% if(users && users.length !== 0) {%>
+          <% users.map(user => { %>
+            <a href="user?id=<%- user.ID %>">
+              <div class="user">
+                <div class="user__image">
+                  <% if(user.Image_code === null || undefined || '') {%>
+                    <img src="../public/assets/user_avatar.png" width="150" height="150"  alt="avatar">
+                  <%} else {%>
+                    <img src="../uploads/images/<%-user.Image_code%>" alt="">
+                  <% }%>
+                  
+                </div>
+                <div class="user__header">
+                  <h2><%- user.First_Name + " " + user.Last_Name %></h2>
+                </div>
+              </div>
+            </a>
+          <% }) %>
+        <%} else {%>
+          <p class="users__plug">No one use this app but you</p>
+        <% } %>
+      </div>
+      <div class="pagination">
+        <li class="page-item 
+        <% if(pageNumber === 1) { %>
+          <%- "disabled" %>  
+        <% } %>
+        ">
+          <a class="page-link" id="prevPagBtn" href="">Previous</a>
+        </li>
+        <% if(users) {%>
+          <% paginationArr.map(pagIndex => { %>
+            <li class="page-item"><a class="page-link" href="users?page=<%- pagIndex%>" value="<%- pagIndex%>"><%- pagIndex%></a></li>
+          <% }) %>
+        <%} else {%>
+          <span class="alert-message">No one use this app but you)</span>
+        <% } %>
+        <li class="page-item 
+        <% if(pageNumber === paginationArr.length) { %>
+          <%- "disabled" %>  
+        <% } %>
+        ">
+          <a class="page-link" id="nextPagBtn" href="">Next</a>
+        </li>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../bin/usersHandlers.js"></script>
+</body>
+</html>

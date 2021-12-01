@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+  color: #4479ff;
+}
+
+a {
+  display: inline;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #000000ba;
+
+}
+
+a:hover {
+  color: #007bff;
+  text-decoration: none;
+} 
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  margin: 50px auto;
+  border-radius: 7px;
+  border: 2px solid #90bbff;
+  padding: 20px;
+  background-color: #fff;
+
+}
+
+.btn {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  margin: 0;
+  padding: 8px !important;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/profile.css">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <div class="container social__logo">
+    <img src="../public/assets/VK_Logo.png" alt="Logo">
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <%- include("partials/navbar.ejs") %>
+    </div>
+    <div class="right-side">
+      <h1>Profile edit mode</h1>
+      <div class="description"> Image updated in the moment, don't think that page is broke </div>
+      <form class="profile__form--image" id="editProfileImageForm" name="editProfileImageForm" method="post" action="/profile/image" enctype="multipart/form-data">
+        <input type="file" id="editProfileImage" accept="image/*" name="photo">
+      </form>
+
+      <form  class="profile__form--main" method="post" action="/profile/edit" id="editProfileForm">
+        <div class="form-group">
+          <label for="first_Name">First name</label>
+          <input type="text" name="first_Name" class="form-control" id="first_Name" value="<%- currentUser.First_Name %>" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label for="last_Name">Last name</label>
+          <input type="text" name="last_Name" class="form-control" id="last_Name" value="<%- currentUser.Last_Name %>" placeholder="Wick" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" name="email" class="form-control" id="email" value="<%- currentUser.Email %>" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="date" name="birthday" class="form-control" id="birthday" value="<%- currentUser.Birth_Date %>" placeholder="1983/10/5" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Password</label>
+          <input name="password" class="form-control" id="password" type="password" value="" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="profileEditBtn">Edit Profile</button>
+      </form>
+    </div>
+  </div>
+  <script src="../bin/profileEditHandlers.js"></script>
+</body>
+</html> 

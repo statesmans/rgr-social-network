@@ -1,0 +1,22 @@
+<nav class="navbar-expand-lg navbar-light ">
+    <ul class="navbar-nav">
+      <% if ( currentUser && currentUser !== null) { %>
+        <li class="nav-item <%- activePage == "userProfile" ? "active" : "" %>">
+          <a class="nav-link" href="/user?id=<%- currentUser.ID %>">Profile</a>
+        </li>
+        <li class="nav-item <%- activePage == "users" ? "active" : "" %>">
+          <a class="nav-link" href="/users?page=1">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      <% } else { %>
+        <li class="nav-item <%- activePage == "login" ? "active" : "" %>">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item <%- activePage == "register" ? "active" : "" %>">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+      <% } %>
+</nav>
+

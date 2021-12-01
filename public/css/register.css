@@ -1,0 +1,34 @@
+h1 {
+  text-align: center;
+  color: #4479ff;
+}
+
+.register__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  margin: 50px auto;
+  border-radius: 7px;
+  border: 2px solid #90bbff;
+  padding: 20px;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.error {
+  background-color: #ff5656;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
