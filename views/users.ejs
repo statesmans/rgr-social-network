@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container social__logo">
-    <img src="../public/assets/VK_Logo.png" alt="Logo">
+    <img src="../assets/VK_Logo.png" alt="Logo">
   </div>
   <div class="container">
     <div class="left-side">
@@ -31,9 +31,9 @@
               <div class="user">
                 <div class="user__image">
                   <% if(user.Image_code === null || undefined || '') {%>
-                    <img src="../public/assets/user_avatar.png" width="150" height="150"  alt="avatar">
+                    <img src="../assets/user_avatar.png" width="150" height="150"  alt="avatar">
                   <%} else {%>
-                    <img src="../uploads/images/<%-user.Image_code%>" alt="">
+                    <img src="../images/<%-user.Image_code%>" alt="">
                   <% }%>
                   
                 </div>

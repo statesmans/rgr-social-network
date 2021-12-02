@@ -1,7 +1,6 @@
 'use strict';
 import { getURLParam } from './frontendHelpers.js';
 
-const infoStatus = document.getElementById('infoStatus');
 const commentControlButtons = Array.from(
   document.getElementsByClassName('comments__showBtn')
 );

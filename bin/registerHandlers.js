@@ -6,7 +6,7 @@ iconImage.addEventListener('change', async (e) => {
   let file = document.forms['register'].elements['file'];
   data.append('file', file);
     fetch('/register/image', {
-      method: 'POST',
+      method: 'PUT',
       body: JSON.stringify(file)
     })
 })
