@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+a,
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none;
+}
 
 
 h1, h2, h3, h4, h5, h6{
@@ -57,7 +64,7 @@ h1, h2, h3, h4, h5, h6{
   background-color: transparent;
 }
 
-.login__sugessed  a { 
+.login__sugessed a { 
   color: #fff;
   text-decoration: none;
   width: 160px;
@@ -67,7 +74,7 @@ h1, h2, h3, h4, h5, h6{
   border-radius: 3px;
 }
 
-.login__sugessed:hover {
+.login__sugessed:hover a {
   background-color:#58a9ff;
 }
 

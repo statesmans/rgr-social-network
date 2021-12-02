@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container social__logo">
-    <img src="../public/assets/VK_Logo.png" alt="Logo">
+    <img src="../assets/VK_Logo.png" alt="Logo">
   </div>
   <div class="container">
     <div class="left-side">
@@ -22,9 +22,9 @@
       <div class="info">
         <div class="info__image">
           <% if(userData.Image_code) {%>
-            <img src="../uploads/images/<%- userData.Image_code %>"  width="150" height="150" alt="avatar">
+            <img src="../images/<%- userData.Image_code %>"  width="150" height="150" alt="avatar">
           <%} else {%>
-            <img src="../public/assets/user_avatar.png" width="150" height="150"  alt="avatar">
+            <img src="../assets/user_avatar.png" width="150" height="150"  alt="avatar">
           <% }%>
           <% if(isOwnerPage) {%>
             <a class="info__editBtn" href="/profile/edit" id="editProfileBtn">Edit profile</a>
@@ -32,13 +32,6 @@
         </div>
         <div class="info__main">
           <h1 class="full__name"><%- userData.First_Name + " " + userData.Last_Name %></h1>
-          <% if(isOwnerPage) {%>
-            <form action="/profile/status" method="POST" name="statusForm">
-              <input class="info__status info__status--disable" id="infoStatus" type="text" name="status" placeholder="Status" value="<%- userData.Status %>">
-            </form>
-          <% } else { %>
-            <span><%- userData.Status %></span>
-          <% } %>
           <hr class="underline" size="2" width="100%" color="#cee6ff">
           <p class="birthday">Birthday: <%- userData.Birth_Date %></p>
         </div>
@@ -113,9 +106,6 @@
       </div>
     </div>
   </div>
-  <% if(isOwnerPage) {%>
-    <script src="../bin/profileHandlers.js"></script>
-  <% } %>
   <script type="module" src="../bin/handlers.js"></script>
 </body>
 </html>
