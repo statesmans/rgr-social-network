@@ -75,8 +75,8 @@ app.post('/register', function (req, res) {
       ];
       db.run(sql, data, function (err, result) {
         if (err) {
-          const errorMessage = errorHandler(err.errno)
-          res.render('register', {errorMessage})
+          const errorMessage = "User with that email already exist or data is not valid";
+          res.render('register', {errorMessage, activePage: "register"})
           return;
         }
         res.render('register_answer', {activePage: "register", formData: req.body})
@@ -347,7 +347,8 @@ app.get('/users', checkAuth, (req, res) => {
     if(err) console.log(err);
     db.all(query, data, (err, usersData) => {
       if(err) console.log(err);
-      const usersCount = query === sqlGetUsers ? row.UsersAmount : usersData[0].usersLength;
+      const usersLength = usersData && usersData[0] && usersData[0].length ? usersData[0].usersLength : null;
+      const usersCount = query === sqlGetUsers ? row.UsersAmount : usersLength;
       const paginationArr = [];
       const pagesCount = Math.ceil(usersCount/pageLimit);
       for(let i=1; i<=pagesCount; i++) {
